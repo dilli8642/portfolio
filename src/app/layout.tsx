@@ -8,13 +8,13 @@ import MobileHeader from "@/components/MobileHeader";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Rashitha Koppurouthu | Full-Stack & AI/ML Developer",
+  title: "Dilleswari Davala | Portfolio",
   description:
-    "Portfolio of Rashitha Koppurouthu — B.Tech AI/ML student. Full-stack developer and MERN stack enthusiast.",
+    "Portfolio of Dilleswari Davala — MERN Stack Developer and Data Analytics Enthusiast.",
   openGraph: {
-    title: "Rashitha Koppurouthu | Full-Stack & AI/ML Developer",
+    title: "Dilleswari Davala | Portfolio",
     description:
-      "Portfolio of Rashitha Koppurouthu — Full-stack developer & AI/ML enthusiast.",
+      "Portfolio of Dilleswari Davala — Full-stack developer & Data Analytics enthusiast.",
     type: "website",
   },
 };
