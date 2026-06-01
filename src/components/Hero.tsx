@@ -73,14 +73,16 @@ export default function Hero() {
               <a href="#projects" className="btn-primary btn-shine interactive text-center w-full sm:w-auto">
                 View my work
               </a>
-              <a
-                href={personalInfo.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline btn-shine interactive text-center w-full sm:w-auto"
-              >
-                Download resume
-              </a>
+              {personalInfo.resumeUrl && (
+                <a
+                  href={personalInfo.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline btn-shine interactive text-center w-full sm:w-auto"
+                >
+                  Download resume
+                </a>
+              )}
               <a
                 href="#contact"
                 className="text-sm font-medium text-accent-cyan hover:text-text-primary transition-colors interactive sm:ml-1"

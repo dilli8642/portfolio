@@ -37,12 +37,16 @@ export default function Achievements() {
         <SectionHeading
           number="05 — Achievements"
           title="Wall of Honor"
-          subtitle="Competitive programming & open-source milestones"
+          subtitle="Academic milestones, competitive coding & certifications"
           align="center"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map((a, i) =>
-            a.size === "large" ? <LargeCard key={i} a={a} /> : <PlatformCard key={i} a={a} />
+            a.size === "large" ? (
+              <LargeCard key={i} a={a} index={i + 1} />
+            ) : (
+              <PlatformCard key={i} a={a} />
+            )
           )}
         </div>
       </div>
@@ -50,20 +54,39 @@ export default function Achievements() {
   );
 }
 
-function LargeCard({ a }: { a: Achievement }) {
+function LargeCard({ a, index }: { a: Achievement; index: number }) {
+  const formattedIndex = index.toString().padStart(2, "0");
   return (
     <div
-      className={`sm:col-span-2 lg:row-span-2 glass-card interactive-card p-6 sm:p-8 flex flex-col justify-between border-t-4 ${borderTopColor[a.color]} relative overflow-hidden reveal-on-scroll rounded-2xl group`}
+      className={`glass-card interactive-card p-6 sm:p-8 min-h-[240px] flex flex-col justify-between border-t-4 ${borderTopColor[a.color]} relative overflow-hidden reveal-on-scroll rounded-2xl group`}
     >
-      <div className="absolute -right-4 -bottom-4 font-display text-[8rem] sm:text-[12rem] font-bold text-accent-purple/5 group-hover:text-accent-purple/10 transition-colors pointer-events-none">
-        01
+      <div className="absolute -right-4 -bottom-4 font-display text-[8rem] sm:text-[10rem] font-bold text-accent-purple/5 group-hover:text-accent-purple/12 group-hover:translate-y-[-8px] group-hover:scale-105 transition-all duration-500 pointer-events-none select-none">
+        {formattedIndex}
       </div>
       <div className="relative z-10">
-        <span className={`px-3 py-1 ${badgeBg[a.color]} ${textColor[a.color]} font-mono text-[10px] uppercase tracking-widest rounded-full mb-4 inline-block`}>
-          {a.badge}
-        </span>
-        <h3 className="font-serif text-2xl sm:text-4xl mb-3 text-text-primary italic font-extrabold">{a.platform}</h3>
-        <p className="text-text-muted text-sm sm:text-base">{a.description}</p>
+        {a.badge && (
+          <span className={`px-3 py-1 ${badgeBg[a.color]} ${textColor[a.color]} font-mono text-[10px] uppercase tracking-widest rounded-full mb-4 inline-block`}>
+            {a.badge}
+          </span>
+        )}
+        <h3 className="font-serif text-2xl sm:text-3xl mb-1 text-text-primary italic font-extrabold group-hover:text-accent-cyan transition-colors duration-300">
+          {a.platform}
+        </h3>
+        {a.title && (
+          <p className={`font-mono ${textColor[a.color]} text-xs uppercase tracking-wider mb-2`}>
+            {a.title}
+          </p>
+        )}
+        {a.description && (
+          <p className="text-text-muted text-sm leading-relaxed mb-3">
+            {a.description}
+          </p>
+        )}
+        {a.stat && (
+          <p className="mt-3 font-mono text-[10px] text-text-primary border-l-2 border-accent-purple/30 pl-2">
+            {a.stat}
+          </p>
+        )}
       </div>
       {a.bigNumber && (
         <p className="mt-6 font-display text-3xl sm:text-4xl font-bold text-gradient relative z-10">{a.bigNumber}</p>
@@ -75,26 +98,32 @@ function LargeCard({ a }: { a: Achievement }) {
 function PlatformCard({ a }: { a: Achievement }) {
   return (
     <div
-      className={`glass-card interactive-card p-5 sm:p-6 border-t-4 ${borderTopColor[a.color]} reveal-on-scroll rounded-2xl group`}
+      className={`glass-card interactive-card p-5 sm:p-6 border-t-4 ${borderTopColor[a.color]} flex flex-col justify-between min-h-[160px] reveal-on-scroll rounded-2xl group`}
     >
-      <div className="flex justify-between items-start gap-2 mb-4">
-        <h3 className="font-serif text-xl sm:text-2xl text-text-primary italic font-extrabold group-hover:text-accent-purple transition-colors">
-          {a.platform}
-        </h3>
-        <span className={`font-mono ${textColor[a.color]} text-sm sm:text-lg font-bold shrink-0`}>
-          {a.badge ?? a.title}
-        </span>
-      </div>
-      {a.rating && <p className="text-text-muted text-xs mb-3">{a.rating}</p>}
-      {a.progressPercent != null && (
-        <div className="h-1.5 w-full bg-bg-primary rounded-full overflow-hidden">
-          <div
-            className={`h-full ${bgColor[a.color]} progress-bar-fill rounded-full`}
-            style={{ width: `${a.progressPercent}%` }}
-          />
+      <div className="relative z-10 w-full">
+        <div className="flex justify-between items-start gap-2 mb-3">
+          <h3 className="font-serif text-xl sm:text-2xl text-text-primary italic font-extrabold group-hover:text-accent-cyan transition-colors duration-300">
+            {a.platform}
+          </h3>
+          <span className={`font-mono ${textColor[a.color]} text-xs uppercase tracking-wider shrink-0`}>
+            {a.badge ?? a.title}
+          </span>
         </div>
+        {a.rating && <p className="text-text-muted text-xs mb-3">{a.rating}</p>}
+        {a.progressPercent != null && (
+          <div className="h-1.5 w-full bg-bg-primary rounded-full overflow-hidden mb-3">
+            <div
+              className={`h-full ${bgColor[a.color]} progress-bar-fill rounded-full`}
+              style={{ width: `${a.progressPercent}%` }}
+            />
+          </div>
+        )}
+      </div>
+      {a.stat && (
+        <p className="mt-3 font-mono text-[10px] text-text-primary border-l-2 border-accent-purple/20 pl-2 relative z-10">
+          {a.stat}
+        </p>
       )}
-      {a.stat && <p className="mt-3 font-mono text-[10px] text-text-primary">{a.stat}</p>}
     </div>
   );
 }

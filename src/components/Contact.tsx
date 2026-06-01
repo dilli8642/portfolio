@@ -39,12 +39,14 @@ export default function Contact() {
                 {personalInfo.email}
               </p>
             </a>
-            <a className="interactive glass-card p-4 sm:p-5 rounded-xl group" href={`tel:${personalInfo.phone}`}>
-              <p className="font-mono text-[10px] text-accent-cyan uppercase tracking-widest mb-2">Phone</p>
-              <p className="text-sm sm:text-base font-display group-hover:text-accent-purple transition-colors text-text-primary">
-                {personalInfo.phone}
-              </p>
-            </a>
+            {personalInfo.phone && (
+              <a className="interactive glass-card p-4 sm:p-5 rounded-xl group" href={`tel:${personalInfo.phone}`}>
+                <p className="font-mono text-[10px] text-accent-cyan uppercase tracking-widest mb-2">Phone</p>
+                <p className="text-sm sm:text-base font-display group-hover:text-accent-purple transition-colors text-text-primary">
+                  {personalInfo.phone}
+                </p>
+              </a>
+            )}
           </div>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -69,7 +71,7 @@ export default function Contact() {
               { label: "GitHub", href: personalInfo.socials.github },
               { label: "LeetCode", href: personalInfo.socials.leetcode },
               { label: "CodeChef", href: personalInfo.socials.codechef },
-            ].map((link) => (
+            ].filter(link => link.href).map((link) => (
               <a
                 key={link.label}
                 href={link.href}

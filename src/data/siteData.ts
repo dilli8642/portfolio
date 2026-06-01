@@ -1,36 +1,31 @@
 // ============================================================
-// siteData.ts — Portfolio Data (Rashitha Koppurouthu)
+// siteData.ts — Portfolio Data (Dilleswari Davala)
 // ============================================================
 
 export const personalInfo = {
-  name: "Rashitha Koppurouthu",
-  initials: "RK",
-  phone: "+91-9347684446",
-  email: "rashithakoppurouthu@gmail.com",
-  tagline:
-    "Full-Stack Developer · AI/ML Enthusiast · MERN Stack Developer",
-  location: "Andhra Pradesh, India",
-  resumeUrl:
-    "https://drive.google.com/file/d/YOUR_RESUME_LINK/view", // Replace
+  name: "Dilleswari Davala",
+  initials: "DD",
+  phone: "",
+  email: "dillidavala@gmail.com",
+  tagline: " MERN Stack Developer · Data Analytics Enthusiast Cybersecurity Aspirant",
+  location: "Srikakulam, Andhra Pradesh, India",
+  resumeUrl: "",
 
   socials: {
-    github: "https://github.com/Rashithakoppurouthu",
-    linkedin:
-      "https://www.linkedin.com/in/koppurouthu-rashitha-71413a291",
-    leetcode: "https://leetcode.com/u/Rashithakoppurouthu",
-    codechef: "https://www.codechef.com/users/rashitha_k",
+    github: "https://github.com/dilli8642",
+    linkedin: "https://www.linkedin.com/in/dilleswari-davala-5506852b5",
+    leetcode: "",
+    codechef: "",
   },
 
   education: {
-    institution:
-      "Vignan Foundation for Science Technology and Research",
-    degree:
-      "Bachelor of Technology in Artificial Intelligence and Machine Learning",
-    gpa: "8.34 / 10",
+    institution: "Aditya Institute of Technology and Management",
+    degree: "Bachelor of Technology in Computer Science and Engineering (Data Science)",
+    gpa: "9.21 / 10",
   },
 
   aboutParagraph:
-    "I am an AI & Full-Stack developer passionate about building scalable real-world applications using MERN Stack, Machine Learning, and modern AI technologies. I enjoy developing intelligent platforms that solve practical problems, from healthcare assistants and business automation systems to AI-powered resume analysis tools. My focus lies in creating high-performance applications with impactful user experiences and production-ready architectures.",
+    "I am a Computer Science undergraduate with strong skills in web development, MERN Stack development, and data analytics. I enjoy building scalable web applications, AI-powered solutions, and data-driven systems. My focus is on developing practical software solutions that enhance user experience and solve real-world problems.",
 };
 
 // ── Skills ─────────────────────────────────────────────────────
@@ -38,28 +33,26 @@ export const personalInfo = {
 export const skills: { category: string; items: string[] }[] = [
   {
     category: "Languages",
-    items: ["Python", "Java", "JavaScript", "SQL"],
+    items: ["Python", "C++", "JavaScript", "SQL"],
   },
 
   {
     category: "Frontend",
     items: [
-      "React.js",
       "HTML",
       "CSS",
       "Tailwind CSS",
-      "Vite",
+      "React.js",
     ],
   },
 
   {
     category: "Backend",
     items: [
+      "PHP",
       "Node.js",
       "Express.js",
       "REST APIs",
-      "JWT Authentication",
-      "API Integration",
     ],
   },
 
@@ -73,9 +66,6 @@ export const skills: { category: string; items: string[] }[] = [
     items: [
       "Scikit-learn",
       "NLP",
-      "Deep Learning",
-      "Disease Prediction",
-      "ATS Analysis",
     ],
   },
 
@@ -88,8 +78,6 @@ export const skills: { category: string; items: string[] }[] = [
       "VS Code",
       "Google Colab",
       "MERN Stack",
-      "OpenAI API",
-      "Gemini API",
     ],
   },
 
@@ -98,11 +86,9 @@ export const skills: { category: string; items: string[] }[] = [
     items: [
       "OOP",
       "Data Structures & Algorithms",
-      "MVC Architecture",
       "DBMS",
       "Computer Networks",
       "Operating Systems",
-      "Cloud Computing",
     ],
   },
 ];
@@ -122,88 +108,35 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: "BizNova",
+    name: "Clinic Management System",
     index: "01",
-    label: "AI Business Platform",
-
-    tagline:
-      "AI-powered multilingual retail and business management platform.",
-
-    stack: [
-      "React.js",
-      "Tailwind CSS",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Google Gemini API",
-    ],
-
+    label: "Web Application",
+    tagline: "A web-based healthcare clinic management and appointment booking system.",
+    stack: ["HTML", "CSS", "PHP", "MySQL"],
     highlights: [
-      "Built a full-stack AI-powered retail platform supporting multilingual voice and text interactions.",
-      "Integrated Google Gemini AI to automate billing, analytics, and inventory management reducing manual effort by 90%.",
-      "Implemented intelligent forecasting for revenue optimization and demand prediction using historical transaction data.",
-      "Developed real-time customer-retailer workflows with automated order synchronization and bill scanning.",
+      "Developed a web-based clinic management system.",
+      "Implemented patient registration and appointment booking.",
+      "Added doctor availability management features.",
+      "Integrated MySQL database and analytics dashboard."
     ],
-
-    liveUrl: "https://biznova.onrender.com",
-
-    githubUrl: "https://github.com/Rashithakoppurouthu/BIZNOVA",
+    liveUrl: "",
+    githubUrl: ""
   },
 
   {
-    name: "ArogyayaVani",
+    name: "Campus AI Chatbot",
     index: "02",
-    label: "AI Healthcare",
-
-    tagline:
-      "Multilingual AI healthcare assistant with disease prediction.",
-
-    stack: [
-      "MERN Stack",
-      "Machine Learning",
-      "REST APIs",
-      "MongoDB",
-    ],
-
+    label: "AI Chatbot",
+    tagline: "A real-time AI assistant for university queries and campus navigation.",
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB"],
     highlights: [
-      "Developed an AI-powered healthcare assistant delivering real-time multilingual symptom analysis.",
-      "Integrated ML models through REST APIs achieving 92% disease prediction accuracy.",
-      "Implemented GPS-based doctor recommendation system for emergency and high-risk conditions.",
-      "Designed scalable frontend-backend architecture enabling seamless real-time interactions.",
+      "Developed and deployed a real-time Campus AI Chatbot.",
+      "Built responsive frontend using React.js.",
+      "Developed REST APIs using Node.js and Express.js.",
+      "Integrated MongoDB for data management."
     ],
-
-    liveUrl: "https://swasthyavani-6.onrender.com/",
-
-    githubUrl: "https://github.com/Rashithakoppurouthu/ArogyaVani",
-  },
-
-  {
-    name: "HireSense",
-    index: "03",
-    label: "AI Resume Platform",
-
-    tagline:
-      "AI-powered ATS resume analyzer and career guidance platform.",
-
-    stack: [
-      "React",
-      "Vite",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "OpenAI API",
-    ],
-
-    highlights: [
-      "Built a full-stack AI resume intelligence platform supporting ATS analysis and role prediction.",
-      "Implemented resume parsing, skill extraction, and job-description matching using pdf-parse and Multer.",
-      "Integrated OpenAI APIs for AI resume enhancement, career coaching, and roadmap generation.",
-      "Developed GitHub profile analytics with secure JWT authentication and rate-limited APIs.",
-    ],
-
-    liveUrl: "https://github.com/Rashithakoppurouthu/HireSense",
-
-    githubUrl: "https://github.com/Rashithakoppurouthu/Hiresense",
+    liveUrl: "https://campus-chatbot-aa5.web.app/",
+    githubUrl: "https://github.com/dilli8642/healbharat_project",
   },
 ];
 
@@ -218,16 +151,26 @@ export interface ExperienceEntry {
 
 export const experience: ExperienceEntry[] = [
   {
-    title: "Full-Stack Developer",
-    company: "Personal & Academic Projects",
-    dates: "2024 — Present",
-
+    title: "MERN Stack Development Intern",
+    company: "Heal Bharat Service LLP",
+    dates: "Jan 2026 — Mar 2026",
     bullets: [
-      "Built scalable MERN stack applications integrating AI APIs and Machine Learning models.",
-      "Developed production-ready REST APIs with authentication, secure routing, and database optimization.",
-      "Implemented AI-driven systems including ATS analysis, healthcare prediction, and business automation.",
-    ],
+      "Developed and deployed a real-time Campus AI Chatbot.",
+      "Built frontend using React.js.",
+      "Developed backend APIs using Node.js and Express.js.",
+      "Integrated MongoDB and performed full-stack deployment."
+    ]
   },
+  {
+    title: "Full Stack Development Intern",
+    company: "Infosys Springboard",
+    dates: "Nov 2025 — Feb 2026",
+    bullets: [
+      "Worked on frontend and backend development concepts.",
+      "Learned application architecture and databases.",
+      "Completed project-based learning modules.",
+    ]
+  }
 ];
 
 // ── Achievements ───────────────────────────────────────────────
@@ -255,62 +198,50 @@ export interface Achievement {
 
 export const achievements: Achievement[] = [
   {
-    platform: "LeetCode",
-
-    title: "Problem Solver",
-
-    badge: "250+ Problems",
-
-    rating: "DSA & Competitive Programming",
-
-    stat: "Solved 250+ algorithmic problems",
-
-    progressPercent: 70,
-
-    color: "accent-teal",
-
-    size: "normal",
-  },
-
-  {
-    platform: "CodeChef",
-
-    title: "Competitive Programmer",
-
-    badge: "1300 Rating",
-
-    rating: "Competitive Coding",
-
-    stat: "Consistent contest participation",
-
-    progressPercent: 60,
-
-    color: "accent-electric",
-
-    size: "normal",
-  },
-
-  {
-    platform: "AWS",
-
-    title: "AWS Cloud Practitioner Essentials",
-
-    stat: "Cloud Computing Foundations",
-
+    platform: "GATE",
+    title: "GATE Qualified",
+    stat: "Score 338 | AIR 11289",
     color: "accent-coral",
+    size: "large"
+  },
 
+  {
+    platform: "Webathon",
+    title: "Second Place",
+    stat: "24-Hour Webathon",
+    color: "accent-coral",
+    size: "large"
+  },
+
+  {
+    platform: "Hackathon",
+    title: "Consolation Medal",
+    stat: "AIGNITE-2.0",
+    color: "accent-coral",
+    size: "large"
+  },
+
+  {
+    platform: "NPTEL",
+    title: "Cyber Security and Privacy",
+    stat: "IIT Madras",
+    color: "accent-coral",
     size: "normal",
   },
 
   {
-    platform: "IBM",
-
-    title: "Backend Development with Node.js & Express",
-
-    stat: "REST APIs & Backend Engineering",
-
+    platform: "NPTEL",
+    title: "Data Analytics with Python",
+    stat: "IIT Roorkee | 77%",
     color: "accent-purple",
+    size: "normal",
+  },
 
+  {
+    platform: "GeeksforGeeks",
+    title: "Python Fundamentals",
+    stat: "Certification",
+    color: "accent-teal",
     size: "normal",
   },
 ];
@@ -326,18 +257,13 @@ export interface Position {
 export const positions: Position[] = [
   {
     label: "Leadership — 01",
-
     title: "AI & Full-Stack Developer",
-
     description:
       "Focused on developing scalable AI-powered applications using MERN Stack, Machine Learning, and cloud technologies.",
   },
-
   {
     label: "Leadership — 02",
-
     title: "Problem Solving & DSA",
-
     description:
       "Actively practicing data structures and algorithms through competitive programming and coding platforms.",
   },
