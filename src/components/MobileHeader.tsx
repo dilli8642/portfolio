@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { navSections, personalInfo } from "@/data/siteData";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import LogoBadge from "@/components/LogoBadge";
+import Image from "next/image";
 
 const sectionIds = navSections.map((s) => s.id);
 
@@ -22,7 +22,7 @@ export default function MobileHeader() {
     <>
       <header className="md:hidden fixed top-0 left-0 right-0 z-[998] px-4 py-3 flex items-center justify-between border-b border-accent-purple/15 bg-bg-primary/90 backdrop-blur-xl">
         <a href="#home" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <LogoBadge initials={personalInfo.initials} size="sm" />
+          <Image src="/profile.jpg" alt="Profile" width={32} height={32} className="rounded-full object-cover border border-accent-purple/30 shadow-[0_0_15px_rgba(255,255,255,0.05)]" />
         </a>
         <button
           type="button"

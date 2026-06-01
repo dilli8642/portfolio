@@ -4,7 +4,7 @@ import { personalInfo } from "@/data/siteData";
 import RollingText from "@/components/RollingText";
 import RollingName from "@/components/RollingName";
 import SplitLetters from "@/components/SplitLetters";
-import LogoBadge from "@/components/LogoBadge";
+import Image from "next/image";
 
 const ROLE_WORDS = ["Full-Stack", "AI/ML"];
 
@@ -93,8 +93,14 @@ export default function Hero() {
           </div>
 
           <div className="order-1 lg:order-2 flex justify-center reveal mb-6 lg:mb-0" style={{ animationDelay: "0.12s" }}>
-            <div className="hero-visual-wrap w-full max-w-[220px] sm:max-w-[280px] lg:max-w-[340px]">
-              <LogoBadge initials={personalInfo.initials} size="hero" variant="minimal" />
+            <div className="hero-visual-wrap w-full max-w-[220px] sm:max-w-[280px] lg:max-w-[340px] aspect-square relative rounded-3xl overflow-hidden border border-accent-purple/30 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+              <Image 
+                src="/profile.jpg" 
+                alt="Profile Picture" 
+                fill 
+                className="object-cover hover:scale-105 transition-transform duration-500 ease-out" 
+                priority 
+              />
             </div>
           </div>
         </div>
